@@ -35,7 +35,7 @@ namespace ariel{
             num = temp/10;
 
             if(num<1 || num > 4)
-                throw invalid_argument("Invalide code");
+                throw std::invalid_argument("Invalide code");
             temp /= 10;
         } while (temp);
         return " _===_ \n (.,.) \n ( : ) \n ( : ) ";
