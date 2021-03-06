@@ -29,12 +29,12 @@ namespace ariel{
         int number_of_digits = 0;
         int temp = number;
 
-        int number = -1;
+        int num = -1;
         do {
             ++number_of_digits; 
-            number = temp/10;
+            num = temp/10;
 
-            if(number<1 || number > 4)
+            if(num<1 || num > 4)
                 throw invalid_argument("Invalide code");
             temp /= 10;
         } while (temp);
