@@ -24,7 +24,7 @@ namespace ariel{
     
     string snowman(int number){
         
-        return " _===_ \n (.,.) \n ( : ) \n ( : ) ";
+        
 
         int number_of_digits = 0;
         int temp = number;
@@ -38,7 +38,7 @@ namespace ariel{
                 throw invalid_argument("Invalide code");
             temp /= 10;
         } while (temp);
-    
+        return " _===_ \n (.,.) \n ( : ) \n ( : ) ";
     }
 
         
