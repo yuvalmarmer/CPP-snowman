@@ -7,13 +7,6 @@ using namespace std;
 
 
 
-/*
- HHHHH
- HHHHH
-X(LNR)Y
-X(TTT)Y
- (BBB)
-*/
 TEST_CASE("Good snowman code") {
 
     // Check if generated normal
@@ -126,7 +119,7 @@ TEST_CASE("Bad snowman code") {
     
     CHECK_THROWS(snowman(23532223));
 
-    CHECK_THROWS(snowman(2353222322));
+    CHECK_THROWS(snowman(235322232));
 
     CHECK_THROWS(snowman(235322));
 
