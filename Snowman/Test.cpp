@@ -10,44 +10,44 @@ using namespace std;
 TEST_CASE("Good snowman code") {
 
     // Check if generated normal
-    CHECK(snowman(11114411) == string(" _===_ \n (.,.) \n ( : ) \n ( : ) "));
+    CHECK(snowman(11114411) == string("_===_\n(.,.)\n( : )\n( : )"));
     
     
 }
 
 TEST_CASE("Difrent hats"){
     //Straw Hat
-    CHECK(snowman(11114411) == string(" _===_ \n (.,.) \n ( : ) \n ( : ) "));    
+    CHECK(snowman(11114411) == string("_===_\n(.,.)\n( : )\n( : )"));    
     //Mexican Hat
-    CHECK(snowman(21114411) == string("  ___  \n ..... \n (.,.) \n ( : ) \n ( : ) "));
+    CHECK(snowman(21114411) == string(" ___ \n.....\n(.,.)\n( : )\n( : )"));
     //Fez
-    CHECK(snowman(31114411) == string("   _   \n  /_\\  \n (.,.) \n ( : ) \n ( : ) "));
+    CHECK(snowman(31114411) == string("  _  \n /_\\ \n(.,.)\n( : )\n( : )"));
     //Rusiian Hat
-    CHECK(snowman(41114411) == string("  ___  \n (_*_) \n (.,.) \n ( : ) \n ( : ) "));
+    CHECK(snowman(41114411) == string(" ___ \n(_*_)\n(.,.)\n( : )\n( : )"));
 
 }
 
 TEST_CASE("Difrent faces"){
     //Normal Nose Dot eye(Left and Right)
-    CHECK(snowman(21114411) == string("  ___  \n ..... \n (.,.) \n ( : ) \n ( : ) "));
+    CHECK(snowman(21114411) == string(" ___ \n.....\n(.,.)\n( : )\n( : )"));
 
     //Normal Nose Bigger Dot eye(Left and Right)
-    CHECK(snowman(21224411) == string("  ___  \n ..... \n (o,o) \n ( : ) \n ( : ) "));
+    CHECK(snowman(21224411) == string(" ___ \n.....\n(o,o)\n( : )\n( : )"));
 
     //Normal Nose Biggest Dot eye(Left and Right)
-    CHECK(snowman(21334411) == string("  ___  \n ..... \n (O,O) \n ( : ) \n ( : ) "));
+    CHECK(snowman(21334411) == string(" ___ \n.....\n(O,O)\n( : )\n( : )"));
 
     //Normal Nose Closed eye(Left and Right)
-    CHECK(snowman(21444411) == string("  ___  \n ..... \n (-,-) \n ( : ) \n ( : ) "));
+    CHECK(snowman(21444411) == string(" ___ \n.....\n(-,-)\n( : )\n( : )"));
 
     //Dot Nose 
-    CHECK(snowman(22444411) == string("  ___  \n ..... \n (-,-) \n ( : ) \n ( : ) "));
+    CHECK(snowman(22444411) == string(" ___ \n.....\n(-,-)\n( : )\n( : )"));
 
     //Line Nose 
-    CHECK(snowman(23444411) == string("  ___  \n ..... \n (-_-) \n ( : ) \n ( : ) "));
+    CHECK(snowman(23444411) == string(" ___ \n.....\n(-_-)\n( : )\n( : )"));
 
     //None Nose 
-    CHECK(snowman(24444411) == string("  ___  \n ..... \n (- -) \n ( : ) \n ( : ) "));
+    CHECK(snowman(24444411) == string(" ___ \n.....\n(- -)\n( : )\n( : )"));
 }
 
 
@@ -63,7 +63,7 @@ TEST_CASE("Difrent hands"){
     CHECK(snowman(21113311) == string("  ___  \n ..... \n (.,.) \n/( : )\\\n ( : ) "));
 
     //None arm (Right and Left)
-    CHECK(snowman(21114411) == string("  ___  \n ..... \n (.,.) \n ( : ) \n ( : ) "));
+    CHECK(snowman(21114411) == string(" ___ \n.....\n(.,.)\n( : )\n( : )"));
 
     //2 Diffrent hand 
     //None arm (Right and Left)
@@ -128,7 +128,7 @@ TEST_CASE("Bad snowman code") {
 
     //Bad Snowman
 
-    CHECK(snowman(21111111) != string("  ___  \n ..... \n (.,.) \n<(] [)>\n ( : ) "));  
-    CHECK(snowman(21114411) != string("  ___  \n ..... \n (-_-) \n ( : ) \n ( : ) "));
+    CHECK(snowman(21111111) != string("  ___  \n ..... \n (.,.) \n<( : )>\n (___) "));
+    CHECK(snowman(21114411) != string("  ___  \n ..... \n (.,.) \n<(   )>\n ( : ) "));   
 }
 
