@@ -32,7 +32,7 @@ namespace ariel{
         int num = -1;
         do {
             ++number_of_digits; 
-            num = temp/10;
+            num = temp%10;
 
             if(num<1 || num > 4)
                 throw std::invalid_argument("Invalide code");
