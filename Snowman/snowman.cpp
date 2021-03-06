@@ -6,6 +6,6 @@ using namespace std;
 
 namespace ariel{
         string snowman(int number){
-            return "Hello";
+            return "_===_\n(.,.)\n( : )\n( : )";
         }
 };
