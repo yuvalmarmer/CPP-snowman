@@ -124,6 +124,9 @@ TEST_CASE("Bad snowman code") {
 
     CHECK_THROWS(snowman(23532551));
 
+    CHECK_THROWS(snowman(21101110));
+
+    CHECK_THROWS(snowman(-21111111));
 
     //Bad Snowman
 
