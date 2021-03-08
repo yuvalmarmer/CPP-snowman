@@ -6,13 +6,12 @@ using namespace ariel;
 using namespace std;
 
 
-
-TEST_CASE("Good snowman code") {
-
-    // Check if generated normal
-    CHECK(snowman(11114411) == string("_===_\n(.,.)\n( : )\n( : )"));
-    
-    
+string nospaces(string input) {
+	std::erase(input, ' ');
+	std::erase(input, '\t');
+	std::erase(input, '\n');
+	std::erase(input, '\r');
+	return input;
 }
 
 TEST_CASE("Difrent hats"){
