@@ -328,7 +328,7 @@ namespace ariel{
         //Create String from 2D-Array
 
         string answer = BuildStringFromArray(skelton);
-
+        cout << answer << endl;
         //Delete the dynamic allocated of skelton function
         //delete skelton;
 
