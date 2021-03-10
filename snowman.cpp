@@ -51,22 +51,22 @@ namespace ariel{
         switch (num)
         {
         case 1:
-            strcpy(skelton[0], "       ");
-            strcpy(skelton[1], " _===_ ");
+            strcpy(skelton[0], string("       ").c_str());
+            strcpy(skelton[1], string(" _===_ ").c_str());
             break;
         case 2:
-            strcpy(skelton[0], "  ___  ");
-            strcpy(skelton[1], " ..... ");
+            strcpy(skelton[0], string("  ___  ").c_str());
+            strcpy(skelton[1], string(" ..... ").c_str());
             break;
 
         case 3:
-            strcpy(skelton[0], "   _   ");
+            strcpy(skelton[0], string("   _   ").c_str());
             strcpy(skelton[1], "  /_\\  ");
             break;
 
         case 4:
-            strcpy(skelton[0], "  ___  ");
-            strcpy(skelton[1], " (_*_) ");
+            strcpy(skelton[0], string("  ___  ").c_str());
+            strcpy(skelton[1], string(" (_*_) ").c_str());
             break;
         
         default:
@@ -80,22 +80,17 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                //skelton[2][0] = ' ';
                 skelton[3][0] = '<';
                 break;
             case 2:
-                skelton[2][0] = '2';
-                //skelton[3][0] = ' ';
+                skelton[2][0] = '\\';
                 break;
 
             case 3:
-                //skelton[2][0] = ' ';
                 skelton[3][0] = '/';
                 break;
 
             case 4:
-                //skelton[2][0] = ' ';
-                //skelton[3][0] = ' ';
                 leftArmFlag=true;
                 break;
             
@@ -275,8 +270,9 @@ namespace ariel{
         //Building the string
         for (int i=0;i<HEIGHT;i++){
             for(int j=0;j<WIDTH;j++){
-                if(skelton[i][j]!='\0')
+                if(skelton[i][j]!='\0'){
                     str.push_back(skelton[i][j]);
+                }
             }
             str.push_back('\n');
         }
