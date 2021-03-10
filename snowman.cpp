@@ -22,12 +22,12 @@ namespace ariel{
     
     bool leftArmFlag = false; //Flag for deleting spaces on left side
     bool rightArmFlag = false; //Flag for deleting spaces on right side
-
+    bool hatFlag = false;
     void initSnowman(char (*skelton)[WIDTH]){
         //Set flags to false
         leftArmFlag = false;
         rightArmFlag = false;
-
+        hatFlag = false;
         //Set all to ' '
         for (int i=0;i<HEIGHT;i++){
             for(int j=0;j<WIDTH;j++){
@@ -51,22 +51,48 @@ namespace ariel{
         switch (num)
         {
         case 1:
-            strcpy(skelton[0], string("       ").c_str());
-            strcpy(skelton[1], string(" _===_ ").c_str());
+            skelton[1][1] = '_';
+            skelton[1][2] = '=';
+            skelton[1][3] = '=';
+            skelton[1][4] = '=';
+            skelton[1][5] = '_';
+            hatFlag = true;
+
             break;
         case 2:
-            strcpy(skelton[0], string("  ___  ").c_str());
-            strcpy(skelton[1], string(" ..... ").c_str());
+            skelton[0][2] = '_';
+            skelton[0][3] = '_';
+            skelton[0][4] = '_';
+
+            skelton[1][1] = '.';
+            skelton[1][2] = '.';
+            skelton[1][3] = '.';
+            skelton[1][4] = '.';
+            skelton[1][5] = '.';
             break;
 
         case 3:
-            strcpy(skelton[0], string("   _   ").c_str());
-            strcpy(skelton[1], "  /_\\  ");
+
+            skelton[0][3] = '_';
+
+            skelton[1][2] = '/';
+            skelton[1][3] = '_';
+            skelton[1][4] = '\\';
             break;
 
         case 4:
             strcpy(skelton[0], string("  ___  ").c_str());
             strcpy(skelton[1], string(" (_*_) ").c_str());
+
+            skelton[0][2] = '_';
+            skelton[0][3] = '_';
+            skelton[0][4] = '_';
+
+            skelton[1][1] = '(';
+            skelton[1][2] = '_';
+            skelton[1][3] = '*';
+            skelton[1][4] = '_';
+            skelton[1][5] = ')';
             break;
         
         default:
@@ -262,6 +288,12 @@ namespace ariel{
             for(int i=0;i<HEIGHT;i++)
                 skelton[i][6] = '\0';
         }
+
+        if(hatFlag){ //Remove from top hat
+            for(int i=0;i<WIDTH;i++)
+                skelton[0][i] = '\0';
+        }
+
     }
     
     //Building a string from 2D array
@@ -272,9 +304,6 @@ namespace ariel{
             for(int j=0;j<WIDTH;j++){
                 if(skelton[i][j]!='\0'){
                     str.push_back(skelton[i][j]);
-                }
-                else{
-                    str.push_back('2');
                 }
             }
             str.push_back('\n');
@@ -332,7 +361,6 @@ namespace ariel{
         //Create String from 2D-Array
 
         string answer = BuildStringFromArray(skelton);
-       // cout << "**********" << endl << answer << endl << "**********" << endl;
         //Delete the dynamic allocated of skelton function
         //delete skelton;
 
