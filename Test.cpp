@@ -14,9 +14,9 @@ string nospaces(string input) {
 	return input;
 }
 
-TEST_CASE("Difrent hats"){
+TEST_CASE("Diffrent hats"){
     //Straw Hat
-    CHECK(snowman(11114411) == string("_===_\n(.,.)\n( : )\n( : )"));    
+    CHECK(nospaces(snowman(11114411)) == nospaces(string("_===_\n(.,.)\n( : )\n( : )")));    
     //Mexican Hat
     CHECK(snowman(21114411) == string(" ___ \n.....\n(.,.)\n( : )\n( : )"));
     //Fez
@@ -26,7 +26,7 @@ TEST_CASE("Difrent hats"){
 
 }
 
-TEST_CASE("Difrent faces"){
+TEST_CASE("Diffrent faces"){
     //Normal Nose Dot eye(Left and Right)
     CHECK(snowman(21114411) == string(" ___ \n.....\n(.,.)\n( : )\n( : )"));
 
@@ -51,7 +51,7 @@ TEST_CASE("Difrent faces"){
 
 
 
-TEST_CASE("Difrent hands"){
+TEST_CASE("Diffrent hands"){
     //Normal arm (Right and Left)
     CHECK(snowman(21111111) == string("  ___  \n ..... \n (.,.) \n<( : )>\n ( : ) "));
 
@@ -85,7 +85,7 @@ TEST_CASE("Difrent Torso"){
 }
 
 
-TEST_CASE("Difrent Base"){
+TEST_CASE("Diffrent Base"){
     //Buttons Base
     CHECK(snowman(21111111) == string("  ___  \n ..... \n (.,.) \n<( : )>\n ( : ) "));
 
@@ -99,7 +99,7 @@ TEST_CASE("Difrent Base"){
     CHECK(snowman(21111114) == string("  ___  \n ..... \n (.,.) \n<( : )>\n (   ) "));
 }
 
-TEST_CASE("Difrent snowmans"){
+TEST_CASE("Diffrent snowmans"){
     CHECK(snowman(33232124) == string("  ___  \n  /_\\  \n\\(o_O) \n (] [)>\n (   ) "));
 
     CHECK(snowman(32243324) == string("   _   \n  /_\\  \n (o.-) \n /(] [)\\ \n (   ) "));
