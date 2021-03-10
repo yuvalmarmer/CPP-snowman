@@ -330,7 +330,7 @@ namespace ariel{
         string answer = BuildStringFromArray(skelton);
 
         //Delete the dynamic allocated of skelton function
-        delete[] skelton;
+        //delete skelton;
 
         return answer;
     }
