@@ -34,10 +34,12 @@ namespace ariel{
         //Adding left boundes
         skelton[2][1]='(';
         skelton[3][1]='(';
+        skelton[4][1]='(';
 
         //Adding right boundes
         skelton[2][5]=')';
         skelton[3][5]=')';
+        skelton[4][5]=')';
 
     }
 
