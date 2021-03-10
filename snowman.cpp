@@ -24,6 +24,9 @@ namespace ariel{
     bool rightArmFlag = false; //Flag for deleting spaces on right side
 
     void initSnowman(char (*skelton)[WIDTH]){
+        //Set flags to false
+        leftArmFlag = false;
+        rightArmFlag = false;
 
         //Set all to ' '
         for (int i=0;i<HEIGHT;i++){
@@ -309,7 +312,6 @@ namespace ariel{
             //Calll a function with the spesific index
             functions[function_indexer](skelton, num);
             
-            cout << "The number " << num << endl;
             temp /= 10;
 
             ++number_of_digits; 
@@ -328,7 +330,7 @@ namespace ariel{
         //Create String from 2D-Array
 
         string answer = BuildStringFromArray(skelton);
-        cout << "**********" << endl << answer << endl << "**********" << endl;
+       // cout << "**********" << endl << answer << endl << "**********" << endl;
         //Delete the dynamic allocated of skelton function
         //delete skelton;
 
