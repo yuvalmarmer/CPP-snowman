@@ -8,6 +8,9 @@ namespace ariel
 {
     string snowman(int num);
 
+    //init for snowman 
+    void initSnowman(char (*skelton[WIDTH]));
+    
     //Hat function
     void Hat(char (*skelton[WIDTH]), int num);
 

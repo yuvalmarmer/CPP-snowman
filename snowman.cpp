@@ -23,6 +23,24 @@ namespace ariel{
     bool leftArmFlag = false;
     bool rightArmFlag = false;
 
+    void initSnowman(char (*skelton)[WIDTH]){
+
+        //Set all to ' '
+        for (int i=0;i<HEIGHT;i++){
+            for(int j=0;j<WIDTH;j++){
+                skelton[i][j]=' ';
+            }
+        }
+        //Adding left boundes
+        skelton[2][1]='(';
+        skelton[3][1]='(';
+
+        //Adding right boundes
+        skelton[2][5]=')';
+        skelton[3][5]=')';
+
+    }
+
     //Hat
     void Hat(char (*skelton)[WIDTH], int num){
         switch (num)
@@ -50,7 +68,6 @@ namespace ariel{
             throw out_of_range("The code " + to_string(num) + " is out of range");
         }
     }
-
 
     //Left arm
     void LeftArm(char (*skelton)[WIDTH], int num){
@@ -221,6 +238,7 @@ namespace ariel{
         int temp = number;
 
         int num = -1;
+        initSnowman(skelton);
         do {
             num = temp%10;
 
@@ -246,7 +264,8 @@ namespace ariel{
         if(number_of_digits>8)
             throw std::exception();
 
-        
+        delete[] skelton;
+
         return " _===_ \n (.,.) \n ( : ) \n ( : ) ";
     }
 
