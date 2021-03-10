@@ -309,6 +309,7 @@ namespace ariel{
             //Calll a function with the spesific index
             functions[function_indexer](skelton, num);
             
+            cout << "The number " << num << endl;
             temp /= 10;
 
             ++number_of_digits; 
