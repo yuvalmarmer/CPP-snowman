@@ -275,7 +275,8 @@ namespace ariel{
         //Building the string
         for (int i=0;i<HEIGHT;i++){
             for(int j=0;j<WIDTH;j++){
-                str.push_back(skelton[i][j]);
+                if(skelton[i][j]!='\0')
+                    str.push_back(skelton[i][j]);
             }
             str.push_back('\n');
         }
