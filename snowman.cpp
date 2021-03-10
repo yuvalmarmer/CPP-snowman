@@ -273,6 +273,9 @@ namespace ariel{
                 if(skelton[i][j]!='\0'){
                     str.push_back(skelton[i][j]);
                 }
+                else{
+                    str.push_back('2');
+                }
             }
             str.push_back('\n');
         }
