@@ -84,7 +84,7 @@ namespace ariel{
                 skelton[3][0] = '<';
                 break;
             case 2:
-                skelton[2][0] = '\\';
+                skelton[2][0] = '2';
                 //skelton[3][0] = ' ';
                 break;
 
