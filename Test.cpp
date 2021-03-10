@@ -23,7 +23,7 @@ TEST_CASE("Diffrent hats"){
     CHECK(nospaces(snowman(31114411)) == nospaces(string("  _  \n /_\\ \n(.,.)\n( : )\n( : )")));
     //Rusiian Hat
     CHECK(nospaces(snowman(41114411)) == nospaces(string(" ___ \n(_*_)\n(.,.)\n( : )\n( : )")));
-1
+
 }
 
 TEST_CASE("Diffrent faces"){
