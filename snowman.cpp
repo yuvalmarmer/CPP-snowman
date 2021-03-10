@@ -283,14 +283,15 @@ namespace ariel{
         return str;
     }
     
-    //The skelton of snowman
-    auto skelton = new char[HEIGHT][WIDTH];
+
     
     //Array of all funcitons
     void (*functions[])(char(*)[WIDTH], int) = {Base, Torso, RightArm, LeftArm, RightEye, LeftEye, Nose, Hat};
     //Snowman function
     string snowman(int number){
-
+        //The skelton of snowman
+        auto skelton = new char[HEIGHT][WIDTH];
+        
         int number_of_digits = 0; //Number of digits
         int function_indexer = 0; //Index of function that will call from the array of fucntions
 
@@ -299,6 +300,7 @@ namespace ariel{
         int num = -1; //The num of each code
         
         initSnowman(skelton); //Init from snowman 
+
         do {     
             num = temp%10;
             //Checks if the code is valid, else throw exception
