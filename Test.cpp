@@ -110,22 +110,26 @@ TEST_CASE("Difrent snowmans"){
 
 
 TEST_CASE("Bad snowman code") {
-
-    //Invalid codes
-
-
+    
+    //Less numbers
     CHECK_THROWS(snowman(555));
     
-    CHECK_THROWS(snowman(23532223));
-
-    CHECK_THROWS(snowman(235322232));
-
     CHECK_THROWS(snowman(235322));
+
+    //Invalid numbers
+    CHECK_THROWS(snowman(23532223));
 
     CHECK_THROWS(snowman(23532551));
 
-    CHECK_THROWS(snowman(21101110));
 
+    //More than needed 
+    CHECK_THROWS(snowman(235322232));
+    
+    //Zeros
+    CHECK_THROWS(snowman(21101110));
+    
+    
+    //Negetive Number
     CHECK_THROWS(snowman(-21111111));
 
     //Bad Snowman
