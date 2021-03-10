@@ -6,15 +6,6 @@
 using namespace std;
 
 
-
-/*
- HHHHH
- HHHHH
-X(LNR)Y
-X(TTT)Y
- (BBB)
-*/
-
 #define WIDTH 7
 #define HEIGHT 5
 
@@ -23,6 +14,8 @@ namespace ariel{
     bool leftArmFlag = false; //Flag for deleting spaces on left side
     bool rightArmFlag = false; //Flag for deleting spaces on right side
     bool hatFlag = false;
+
+    //Init the snowman
     void initSnowman(char (*skelton)[WIDTH]){
         //Set flags to false
         leftArmFlag = false;
