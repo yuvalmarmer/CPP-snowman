@@ -18,93 +18,93 @@ TEST_CASE("Diffrent hats"){
     //Straw Hat
     CHECK(nospaces(snowman(11114411)) == nospaces(string("_===_\n(.,.)\n( : )\n( : )")));    
     //Mexican Hat
-    CHECK(snowman(21114411) == string(" ___ \n.....\n(.,.)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(21114411)) == nospaces(string(" ___ \n.....\n(.,.)\n( : )\n( : )")));
     //Fez
-    CHECK(snowman(31114411) == string("  _  \n /_\\ \n(.,.)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(31114411)) == nospaces(string("  _  \n /_\\ \n(.,.)\n( : )\n( : )")));
     //Rusiian Hat
-    CHECK(snowman(41114411) == string(" ___ \n(_*_)\n(.,.)\n( : )\n( : )"));
-
+    CHECK(nospaces(snowman(41114411)) == nospaces(string(" ___ \n(_*_)\n(.,.)\n( : )\n( : )")));
+1
 }
 
 TEST_CASE("Diffrent faces"){
     //Normal Nose Dot eye(Left and Right)
-    CHECK(snowman(21114411) == string(" ___ \n.....\n(.,.)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(21114411)) == nospaces(string(" ___ \n.....\n(.,.)\n( : )\n( : )")));
 
     //Normal Nose Bigger Dot eye(Left and Right)
-    CHECK(snowman(21224411) == string(" ___ \n.....\n(o,o)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(21224411)) == nospaces(string(" ___ \n.....\n(o,o)\n( : )\n( : )")));
 
     //Normal Nose Biggest Dot eye(Left and Right)
-    CHECK(snowman(21334411) == string(" ___ \n.....\n(O,O)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(21334411)) == nospaces(string(" ___ \n.....\n(O,O)\n( : )\n( : )")));
 
     //Normal Nose Closed eye(Left and Right)
-    CHECK(snowman(21444411) == string(" ___ \n.....\n(-,-)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(21444411)) == nospaces(string(" ___ \n.....\n(-,-)\n( : )\n( : )")));
 
     //Dot Nose 
-    CHECK(snowman(22444411) == string(" ___ \n.....\n(-,-)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(22444411)) == nospaces(string(" ___ \n.....\n(-,-)\n( : )\n( : )")));
 
     //Line Nose 
-    CHECK(snowman(23444411) == string(" ___ \n.....\n(-_-)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(23444411)) == nospaces(string(" ___ \n.....\n(-_-)\n( : )\n( : )")));
 
     //None Nose 
-    CHECK(snowman(24444411) == string(" ___ \n.....\n(- -)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(24444411)) == nospaces(string(" ___ \n.....\n(- -)\n( : )\n( : )")));
 }
 
 
 
 TEST_CASE("Diffrent hands"){
     //Normal arm (Right and Left)
-    CHECK(snowman(21111111) == string("  ___  \n ..... \n (.,.) \n<( : )>\n ( : ) "));
+    CHECK(nospaces(snowman(21111111)) == nospaces(string("  ___  \n ..... \n (.,.) \n<( : )>\n ( : ) ")));
 
     //Upwards arm (Right and Left)
-    CHECK(snowman(21112211) == string("  ___  \n ..... \n\\(.,.)/\n ( : ) \n ( : ) "));
+    CHECK(nospaces(snowman(21112211)) == nospaces(string("  ___  \n ..... \n\\(.,.)/\n ( : ) \n ( : ) ")));
 
     //Downwards Arm (Right and Left)
-    CHECK(snowman(21113311) == string("  ___  \n ..... \n (.,.) \n/( : )\\\n ( : ) "));
+    CHECK(nospaces(snowman(21113311)) == nospaces(string("  ___  \n ..... \n (.,.) \n/( : )\\\n ( : ) ")));
 
     //None arm (Right and Left)
-    CHECK(snowman(21114411) == string(" ___ \n.....\n(.,.)\n( : )\n( : )"));
+    CHECK(nospaces(snowman(21114411)) == nospaces(string(" ___ \n.....\n(.,.)\n( : )\n( : )")));
 
     //2 Diffrent hand 
     //None arm (Right and Left)
-    CHECK(snowman(21111211) == string("  ___  \n ..... \n (.,.)/\n<( : ) \n ( : ) "));
+    CHECK(nospaces(snowman(21111211)) == nospaces(string("  ___  \n ..... \n (.,.)/\n<( : ) \n ( : ) ")));
 }
 
 TEST_CASE("Difrent Torso"){
     //Buttons torso
-    CHECK(snowman(21111111) == string("  ___  \n ..... \n (.,.) \n<( : )>\n ( : ) "));
+    CHECK(nospaces(snowman(21111111)) == nospaces(string("  ___  \n ..... \n (.,.) \n<( : )>\n ( : ) ")));
 
     //Vest torso
-    CHECK(snowman(21111121) == string("  ___  \n ..... \n (.,.) \n<(] [)>\n ( : ) "));    
+    CHECK(nospaces(snowman(21111121)) == nospaces(string("  ___  \n ..... \n (.,.) \n<(] [)>\n ( : ) ")));    
     
     //Inward Arms torso
-    CHECK(snowman(21111121) == string("  ___  \n ..... \n (.,.) \n<(> <)>\n ( : ) "));    
+    CHECK(nospaces(snowman(21111121)) == nospaces(string("  ___  \n ..... \n (.,.) \n<(> <)>\n ( : ) ")));    
 
     //None torso
-    CHECK(snowman(21111121) == string("  ___  \n ..... \n (.,.) \n<(   )>\n ( : ) "));    
+    CHECK(nospaces(snowman(21111121)) == nospaces(string("  ___  \n ..... \n (.,.) \n<(   )>\n ( : ) ")));    
 
 }
 
 
 TEST_CASE("Diffrent Base"){
     //Buttons Base
-    CHECK(snowman(21111111) == string("  ___  \n ..... \n (.,.) \n<( : )>\n ( : ) "));
+    CHECK(nospaces(snowman(21111111)) == nospaces(string("  ___  \n ..... \n (.,.) \n<( : )>\n ( : ) ")));
 
     //Feet Base
-    CHECK(snowman(21111112) == string("  ___  \n ..... \n (.,.) \n<( : )>\n (\" \") "));
-
+    CHECK(nospaces(snowman(21111112)) == nospaces(string("  ___  \n ..... \n (.,.) \n<( : )>\n (\" \") ")));
+    
     //Flat Base
-    CHECK(snowman(21111113) == string("  ___  \n ..... \n (.,.) \n<( : )>\n (___) "));
+    CHECK(nospaces(snowman(21111113)) == nospaces(string("  ___  \n ..... \n (.,.) \n<( : )>\n (___) ")));
 
     //None Base
-    CHECK(snowman(21111114) == string("  ___  \n ..... \n (.,.) \n<( : )>\n (   ) "));
+    CHECK(nospaces(snowman(21111114)) == nospaces(string("  ___  \n ..... \n (.,.) \n<( : )>\n (   ) ")));
 }
 
 TEST_CASE("Diffrent snowmans"){
-    CHECK(snowman(33232124) == string("  ___  \n  /_\\  \n\\(o_O) \n (] [)>\n (   ) "));
+    CHECK(nospaces(snowman(33232124)) == nospaces(string("  ___  \n  /_\\  \n\\(o_O) \n (] [)>\n (   ) ")));
 
-    CHECK(snowman(32243324) == string("   _   \n  /_\\  \n (o.-) \n /(] [)\\ \n (   ) "));
+    CHECK(nospaces(snowman(32243324))== nospaces(string("   _   \n  /_\\  \n (o.-) \n /(] [)\\ \n (   ) ")));
 
-    CHECK(snowman(23232223) == string("  ___  \n  ..... \n\\(o_O)/\n (] [) \n (___) "));
+    CHECK(nospaces(snowman(23232223)) == nospaces(string("  ___  \n  ..... \n\\(o_O)/\n (] [) \n (___) ")));
 
 }
 
@@ -112,29 +112,29 @@ TEST_CASE("Diffrent snowmans"){
 TEST_CASE("Bad snowman code") {
     
     //Less numbers
-    CHECK_THROWS(snowman(555));
+    CHECK_THROWS(nospaces(snowman(555)));
     
-    CHECK_THROWS(snowman(235322));
+    CHECK_THROWS(nospaces(snowman(235322)));
 
     //Invalid numbers
-    CHECK_THROWS(snowman(23532223));
+    CHECK_THROWS(nospaces(snowman(23532223)));
 
-    CHECK_THROWS(snowman(23532551));
+    CHECK_THROWS(nospaces(snowman(23532551)));
 
 
     //More than needed 
-    CHECK_THROWS(snowman(235322232));
+    CHECK_THROWS(nospaces(snowman(235322232)));
     
     //Zeros
-    CHECK_THROWS(snowman(21101110));
+    CHECK_THROWS(nospaces(snowman(21101110)));
     
     
     //Negetive Number
-    CHECK_THROWS(snowman(-21111111));
+    CHECK_THROWS(nospaces(snowman(-21111111)));
 
     //Bad Snowman
 
-    CHECK(snowman(21111111) != string("  ___  \n ..... \n (.,.) \n<( : )>\n (___) "));
-    CHECK(snowman(21114411) != string("  ___  \n ..... \n (.,.) \n<(   )>\n ( : ) "));   
+    CHECK(nospaces(snowman(21111111)) != nospaces(string("  ___  \n ..... \n (.,.) \n<( : )>\n (___) ")));
+    CHECK(nospaces(snowman(21114411)) != nospaces(string("  ___  \n ..... \n (.,.) \n<(   )>\n ( : ) ")));   
 }
 
