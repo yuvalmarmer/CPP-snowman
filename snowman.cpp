@@ -205,19 +205,19 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                strcpy(skelton[3]+2 , " : ");
-                //skelton[3][3] = ',';
+                skelton[3][3] = ':';
                 break;
             case 2:
-                strcpy(skelton[3]+2 , "] [");
+                skelton[3][2] = ']';
+                skelton[3][4] = '[';
                 break;
 
-            case 3:
-                strcpy(skelton[3]+2 , "> <");
+            case 3:     
+                skelton[3][2] = '>';
+                skelton[3][4] = '<';
                 break;
 
             case 4:
-                strcpy(skelton[3]+2 , "   ");
                 break;
             
             default:
@@ -227,7 +227,30 @@ namespace ariel{
     
 
     //Base
-    void Base(char (*skelton)[WIDTH], int num){}
+    void Base(char (*skelton)[WIDTH], int num){
+        switch (num)
+        {
+            case 1:
+                skelton[4][3] = ':';
+                break;
+            case 2:
+                skelton[4][2] = '"';
+                skelton[4][4] = '"';
+                break;
+
+            case 3:     
+                skelton[4][2] = '_';
+                skelton[4][3] = '_';
+                skelton[4][4] = '_';
+                break;
+
+            case 4:
+                break;
+            
+            default:
+                throw out_of_range("The code " + to_string(num) + " is out of range");
+        }
+    }
 
     //char skelton[HEIGHT][WIDTH];
     auto skelton = new char[HEIGHT][WIDTH];
