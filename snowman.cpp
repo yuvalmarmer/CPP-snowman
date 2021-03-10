@@ -284,8 +284,7 @@ namespace ariel{
     auto skelton = new char[HEIGHT][WIDTH];
     
     //Array of all funcitons
-    void (*functions[])(char(*)[WIDTH], int) = {Hat, Nose, LeftEye, RightEye, LeftArm, RightArm, Torso, Base};
-    
+    void (*functions[])(char(*)[WIDTH], int) = {Base, Torso, RightArm, LeftArm, RightEye, LeftEye, Nose, Hat};
     //Snowman function
     string snowman(int number){
 
