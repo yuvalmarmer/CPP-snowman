@@ -260,12 +260,12 @@ namespace ariel{
     void RemoveSpaces(char (*skelton)[WIDTH]){
         if(leftArmFlag){ //Remove from left side all spaces
             for(int i=0;i<HEIGHT;i++)
-                skelton[i][0] = '1';
+                skelton[i][0] = '\0';
         }
 
         if(rightArmFlag){ //Remove from right side all spaces
             for(int i=0;i<HEIGHT;i++)
-                skelton[i][6] = '1';
+                skelton[i][6] = '\0';
         }
     }
     
