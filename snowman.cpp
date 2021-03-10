@@ -273,11 +273,15 @@ namespace ariel{
     string BuildStringFromArray(char (*skelton)[WIDTH]){
         string str;
         //Building the string
+        int index = 0;
         for (int i=0;i<HEIGHT;i++){
             for(int j=0;j<WIDTH;j++){
-                str+=skelton[i][j];
+                //str+=skelton[i][j];
+                str.append(index, skelton[i][j]);
+                index++;
             }
-            str+='\n';
+            str.append(index, '\n');
+            index++;
         }
 
         return str;
