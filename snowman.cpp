@@ -80,22 +80,22 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                skelton[2][0] = ' ';
+                //skelton[2][0] = ' ';
                 skelton[3][0] = '<';
                 break;
             case 2:
-                skelton[2][0] = '\\';
+                //skelton[2][0] = '\\';
                 skelton[3][0] = ' ';
                 break;
 
             case 3:
-                skelton[2][0] = ' ';
+                //skelton[2][0] = ' ';
                 skelton[3][0] = '/';
                 break;
 
             case 4:
-                skelton[2][0] = ' ';
-                skelton[3][0] = ' ';
+                //skelton[2][0] = ' ';
+                //skelton[3][0] = ' ';
                 leftArmFlag=true;
                 break;
             
