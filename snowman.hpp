@@ -34,4 +34,10 @@ namespace ariel
 
     //Base
     void Base(char (*skelton[WIDTH]), int num);
+
+    //Remove spaces
+    void RemoveSpaces(char (*skelton[WIDTH]));
+
+    //Building the string
+    string BuildStringFromArray(char (*skelton[WIDTH]));
 };

@@ -19,9 +19,9 @@ X(TTT)Y
 #define HEIGHT 5
 
 namespace ariel{
-
-    bool leftArmFlag = false;
-    bool rightArmFlag = false;
+    
+    bool leftArmFlag = false; //Flag for deleting spaces on left side
+    bool rightArmFlag = false; //Flag for deleting spaces on right side
 
     void initSnowman(char (*skelton)[WIDTH]){
 
@@ -227,7 +227,6 @@ namespace ariel{
         }
     }
     
-
     //Base
     void Base(char (*skelton)[WIDTH], int num){
         switch (num)
@@ -254,44 +253,86 @@ namespace ariel{
         }
     }
 
-    //char skelton[HEIGHT][WIDTH];
-    auto skelton = new char[HEIGHT][WIDTH];
+    //Remove spaces by if the flags are true
+    void RemoveSpaces(char (*skelton)[WIDTH]){
+        if(leftArmFlag){ //Remove from left side all spaces
+            for(int i=0;i<HEIGHT;i++)
+                skelton[i][0] = '\0';
+        }
 
+        if(rightArmFlag){ //Remove from right side all spaces
+            for(int i=0;i<HEIGHT;i++)
+                skelton[i][6] = '\0';
+        }
+    }
+    
+    //Building a string from 2D array
+    string BuildStringFromArray(char (*skelton)[WIDTH]){
+        string str;
+        //Building the string
+        for (int i=0;i<HEIGHT;i++){
+            for(int j=0;j<WIDTH;j++){
+                str+=skelton[i][j];
+            }
+            str+='\n';
+        }
+
+        return str;
+    }
+    
+    //The skelton of snowman
+    auto skelton = new char[HEIGHT][WIDTH];
+    
+    //Array of all funcitons
     void (*functions[])(char(*)[WIDTH], int) = {Hat, Nose, LeftEye, RightEye, LeftArm, RightArm, Torso, Base};
+    
+    //Snowman function
     string snowman(int number){
-        int number_of_digits = 0;
+
+        int number_of_digits = 0; //Number of digits
+        int function_indexer = 0; //Index of function that will call from the array of fucntions
+
         int temp = number;
 
-        int num = -1;
-        initSnowman(skelton);
-        do {
+        int num = -1; //The num of each code
+        
+        initSnowman(skelton); //Init from snowman 
+        do {     
             num = temp%10;
-
+            //Checks if the code is valid, else throw exception
             if(num<1 || num > 4)
                 throw std::invalid_argument("Invalide code");
 
-            functions[number_of_digits](skelton, num);
+            //Check if there is more than 8 digits
+            if(number_of_digits>8)
+                throw std::out_of_range("The code is more that 8 digits");
+            
+            //Calll a function with the spesific index
+            functions[function_indexer](skelton, num);
             
             temp /= 10;
-            ++number_of_digits; 
 
+            ++number_of_digits; 
+            ++function_indexer;
 
         } while (temp);
 
-        for (int i=0;i<HEIGHT;i++){
-            for(int j=0;j<WIDTH;j++){
-                cout << skelton[i][j];
-            }
-            cout << endl;
-        }
-
-
-        if(number_of_digits>8)
+        //Check if number of digits is less than 8
+        if(number_of_digits<8)
             throw std::exception();
 
+
+        //Remove all spaces 
+        RemoveSpaces(skelton);
+
+        //Create String from 2D-Array
+
+        string answer = BuildStringFromArray(skelton);
+
+        //Delete the dynamic allocated of skelton function
         delete[] skelton;
 
-        return " _===_ \n (.,.) \n ( : ) \n ( : ) ";
+        return answer;
     }
 
         
