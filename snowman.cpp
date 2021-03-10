@@ -20,14 +20,32 @@ X(TTT)Y
 
 namespace ariel{
 
-
+    //Hat
     void Hat(char (*skelton)[WIDTH], int num){
-        for(int i=0;i<HEIGHT;i++){
-            for(int j=0;j<WIDTH;j++){
-                skelton[i][j]='1';
-            }
-        }
+        switch (num)
+        {
+        case 1:
+            strcpy(skelton[0], "       ");
+            strcpy(skelton[1], " _===_ ");
+            break;
+        case 2:
+            strcpy(skelton[0], "  ___  ");
+            strcpy(skelton[1], " ..... ");
+            break;
 
+        case 3:
+            strcpy(skelton[0], "   _   ");
+            strcpy(skelton[1], "  /_\\  ");
+            break;
+
+        case 4:
+            strcpy(skelton[0], "  ___  ");
+            strcpy(skelton[1], " (_*_) ");
+            break;
+        
+        default:
+            break;
+        }
     }
 
 
