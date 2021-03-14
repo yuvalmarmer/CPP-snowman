@@ -28,7 +28,7 @@ namespace ariel{
             vector<char> temp;
             temp.resize(WIDTH);
             for(int j=0;j<WIDTH;j++){
-                temp.push_back(' ');
+                temp.at(j) = ' ';
             }
             skelton.push_back(temp);
         }
@@ -314,7 +314,7 @@ namespace ariel{
     
     //Array of all funcitons
     //void (*functions[])(vector<vector<char>>&, int) = {Base, Torso, RightArm, LeftArm, RightEye, LeftEye, Nose, Hat};
-    std::array<std::function<void(vector<vector<char>>&, int)>, 8> functions = {bind(Base, placeholders::_1, placeholders::_2),bind(Torso, placeholders::_1, placeholders::_2), 
+    const std::array<std::function<void(vector<vector<char>>&, int)>, MAX_LEN> functions = {bind(Base, placeholders::_1, placeholders::_2),bind(Torso, placeholders::_1, placeholders::_2), 
                                                                                 bind(RightArm, placeholders::_1, placeholders::_2),bind(LeftArm, placeholders::_1, placeholders::_2), 
                                                                                 bind(RightEye, placeholders::_1, placeholders::_2),bind(LeftEye, placeholders::_1, placeholders::_2), 
                                                                                 bind(Nose, placeholders::_1, placeholders::_2),bind(Hat, placeholders::_1, placeholders::_2)};
