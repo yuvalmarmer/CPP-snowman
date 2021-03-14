@@ -4,6 +4,9 @@
 #include <stdexcept>
 #include <cstring>
 #include <vector>
+#include <functional>
+#include <array>
+
 
 using namespace std;
 
@@ -13,7 +16,7 @@ namespace ariel{
     bool leftArmFlag = false; //Flag for deleting spaces on left side
     bool rightArmFlag = false; //Flag for deleting spaces on right side
     bool hatFlag = false;
-
+    const int RightBoudeHat = 5;
     //Init the snowman
     void initSnowman(vector<vector<char>> &skelton){
         //Set flags to false
@@ -43,8 +46,6 @@ namespace ariel{
 
     //Hat
     void Hat(vector<vector<char>> &skelton, int num){
-
-        int Five = 5;
         switch (num)
         {
         case 1:
@@ -52,7 +53,7 @@ namespace ariel{
             skelton.at(HAT_DOWN).at(2) =  '=';
             skelton.at(HAT_DOWN).at(3) =  '=';
             skelton.at(HAT_DOWN).at(4) =  '=';
-            skelton.at(HAT_DOWN).at(Five) =  '_';
+            skelton.at(HAT_DOWN).at(RightBoudeHat) =  '_';
             hatFlag = true;
 
             break;
@@ -65,7 +66,7 @@ namespace ariel{
             skelton.at(HAT_DOWN).at(2) = '.';
             skelton.at(HAT_DOWN).at(3) = '.';
             skelton.at(HAT_DOWN).at(4) = '.';
-            skelton.at(HAT_DOWN).at(Five) = '.';
+            skelton.at(HAT_DOWN).at(RightBoudeHat) = '.';
             break;
 
         case 3:
@@ -86,7 +87,7 @@ namespace ariel{
             skelton.at(HAT_DOWN).at(2) = '_';
             skelton.at(HAT_DOWN).at(3) = '*';
             skelton.at(HAT_DOWN).at(4) = '_';
-            skelton.at(HAT_DOWN).at(Five) = ')';
+            skelton.at(HAT_DOWN).at(RightBoudeHat) = ')';
             break;
         
         default:
@@ -312,9 +313,11 @@ namespace ariel{
 
     
     //Array of all funcitons
-    void (*functions[])(vector<vector<char>>&, int) = {Base, Torso, RightArm, LeftArm, RightEye, LeftEye, Nose, Hat};
+    //void (*functions[])(vector<vector<char>>&, int) = {Base, Torso, RightArm, LeftArm, RightEye, LeftEye, Nose, Hat};
+    std::array<std::function<void(vector<vector<char>>&, int)>, 8> functions = {{bind(&Base, _1),bind(&Torso, _1),bind(&RightArm, _1),bind(&LeftArm, _1),bind(&RightEye, _1),bind(&LeftEye, _1),bind(&Nose, _1),bind(&Hat, _1)}};
     //Snowman function
     string snowman(int number){
+
         //The skelton of snowman
         //auto skelton = new char[HEIGHT][WIDTH];
         std::vector<std::vector<char>> skelton;
