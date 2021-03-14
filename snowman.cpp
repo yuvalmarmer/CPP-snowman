@@ -312,15 +312,15 @@ namespace ariel{
     
 
     
-    //Array of all funcitons
-    //void (*functions[])(vector<vector<char>>&, int) = {Base, Torso, RightArm, LeftArm, RightEye, LeftEye, Nose, Hat};
-    const std::array<std::function<void(vector<vector<char>>&, int)>, MAX_LEN> functions = {bind(Base, placeholders::_1, placeholders::_2),bind(Torso, placeholders::_1, placeholders::_2), 
+    
+
+    //Snowman function
+    string snowman(int number){
+        //Array of all funcitons
+        std::array<std::function<void(vector<vector<char>>&, int)>, MAX_LEN> functions = {bind(Base, placeholders::_1, placeholders::_2),bind(Torso, placeholders::_1, placeholders::_2), 
                                                                                 bind(RightArm, placeholders::_1, placeholders::_2),bind(LeftArm, placeholders::_1, placeholders::_2), 
                                                                                 bind(RightEye, placeholders::_1, placeholders::_2),bind(LeftEye, placeholders::_1, placeholders::_2), 
                                                                                 bind(Nose, placeholders::_1, placeholders::_2),bind(Hat, placeholders::_1, placeholders::_2)};
-    //Snowman function
-    string snowman(int number){
-
         //The skelton of snowman
         //auto skelton = new char[HEIGHT][WIDTH];
         std::vector<std::vector<char>> skelton;
