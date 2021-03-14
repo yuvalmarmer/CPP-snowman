@@ -49,10 +49,11 @@ namespace ariel{
         hatFlag = false;
         //Set all to ' '
         for (int i=0;i<HEIGHT;i++){
-            skelton[i].resize(WIDTH);
+            vector<char> temp;
             for(int j=0;j<WIDTH;j++){
-                skelton.at(i).push_back(' ');
+                temp.push_back(' ');
             }
+            skelton.push_back(temp);
         }
         //Adding left boundes
         skelton.at(2).at(1) ='(';
