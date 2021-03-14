@@ -9,35 +9,35 @@ namespace ariel
     string snowman(int num);
 
     //init for snowman 
-    void initSnowman(char (*skelton[WIDTH]));
+    void initSnowman(vector<vector<char>> &skelton);
     
     //Hat function
-    void Hat(char (*skelton[WIDTH]), int num);
+    void Hat(vector<vector<char>> &skelton, int num);
 
     //Left arm
-    void LeftArm(char (*skelton[WIDTH]), int num);
+    void LeftArm(vector<vector<char>> &skelton, int num);
 
     //Right arm
-    void RightArm(char (*skelton[WIDTH]), int num);
+    void RightArm(vector<vector<char>> &skelton, int num);
 
     //Left eye
-    void LeftEye(char (*skelton[WIDTH]), int num);
+    void LeftEye(vector<vector<char>> &skelton, int num);
 
     //Right eye
-    void RightEye(char (*skelton[WIDTH]), int num);
+    void RightEye(vector<vector<char>> &skelton, int num);
 
     //Nose
-    void Nose(char (*skelton[WIDTH]), int num);
+    void Nose(vector<vector<char>> &skelton, int num);
 
     //Torso
-    void Torso(char (*skelton[WIDTH]), int num);
+    void Torso(vector<vector<char>> &skelton, int num);
 
     //Base
-    void Base(char (*skelton[WIDTH]), int num);
+    void Base(vector<vector<char>> &skelton, int num);
 
     //Remove spaces
-    void RemoveSpaces(char (*skelton[WIDTH]));
+    void RemoveSpaces(vector<vector<char>> &skelton);
 
     //Building the string
-    string BuildStringFromArray(char (*skelton[WIDTH]));
+    string BuildStringFromArray(vector<vector<char>> &skelton);
 };

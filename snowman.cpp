@@ -3,6 +3,8 @@
 #include <string>
 #include <stdexcept>
 #include <cstring>
+#include <vector>
+
 using namespace std;
 
 
@@ -40,7 +42,7 @@ namespace ariel{
     bool hatFlag = false;
 
     //Init the snowman
-    void initSnowman(char (*skelton)[WIDTH]){
+    void initSnowman(vector<vector<char>> &skelton){
         //Set flags to false
         leftArmFlag = false;
         rightArmFlag = false;
@@ -48,65 +50,65 @@ namespace ariel{
         //Set all to ' '
         for (int i=0;i<HEIGHT;i++){
             for(int j=0;j<WIDTH;j++){
-                skelton[i][j]=' ';
+                skelton.at(i).push_back(' ');
             }
         }
         //Adding left boundes
-        skelton[2][1]='(';
-        skelton[3][1]='(';
-        skelton[4][1]='(';
+        skelton.at(2).at(1) ='(';
+        skelton.at(3).at(1) ='(';
+        skelton.at(4).at(1) ='(';
 
         //Adding right boundes
-        skelton[2][5]=')';
-        skelton[3][5]=')';
-        skelton[4][5]=')';
+        skelton.at(2).at(5)=')';
+        skelton.at(3).at(5)=')';
+        skelton.at(4).at(5)=')';
 
     }
 
     //Hat
-    void Hat(char (*skelton)[WIDTH], int num){
+    void Hat(vector<vector<char>> &skelton, int num){
         switch (num)
         {
         case 1:
-            skelton[HAT_DOWN][1] = '_';
-            skelton[HAT_DOWN][2] = '=';
-            skelton[HAT_DOWN][3] = '=';
-            skelton[HAT_DOWN][4] = '=';
-            skelton[HAT_DOWN][5] = '_';
+            skelton.at(HAT_DOWN).at(1) =  '_';
+            skelton.at(HAT_DOWN).at(2) =  '=';
+            skelton.at(HAT_DOWN).at(3) =  '=';
+            skelton.at(HAT_DOWN).at(4) =  '=';
+            skelton.at(HAT_DOWN).at(5) =  '_';
             hatFlag = true;
 
             break;
         case 2:
-            skelton[HAT_UP][2] = '_';
-            skelton[HAT_UP][3] = '_';
-            skelton[HAT_UP][4] = '_';
+            skelton.at(HAT_UP).at(2) = '_';
+            skelton.at(HAT_UP).at(3) = '_';
+            skelton.at(HAT_UP).at(4) = '_';
 
-            skelton[HAT_DOWN][1] = '.';
-            skelton[HAT_DOWN][2] = '.';
-            skelton[HAT_DOWN][3] = '.';
-            skelton[HAT_DOWN][4] = '.';
-            skelton[HAT_DOWN][5] = '.';
+            skelton.at(HAT_DOWN).at(1) = '.';
+            skelton.at(HAT_DOWN).at(2) = '.';
+            skelton.at(HAT_DOWN).at(3) = '.';
+            skelton.at(HAT_DOWN).at(4) = '.';
+            skelton.at(HAT_DOWN).at(5) = '.';
             break;
 
         case 3:
 
-            skelton[HAT_UP][3] = '_';
+            skelton.at(HAT_UP).at(3)  = '_';
 
-            skelton[HAT_DOWN][2] = '/';
-            skelton[HAT_DOWN][3] = '_';
-            skelton[HAT_DOWN][4] = '\\';
+            skelton.at(HAT_DOWN).at(2) = '/';
+            skelton.at(HAT_DOWN).at(3) = '_';
+            skelton.at(HAT_DOWN).at(4) = '\\';
             break;
 
         case 4:
-            skelton[HAT_UP][2] = '_';
-            skelton[HAT_UP][3] = '_';
-            skelton[HAT_UP][4] = '_';
+            skelton.at(HAT_UP).at(2) = '_';
+            skelton.at(HAT_UP).at(3) = '_';
+            skelton.at(HAT_UP).at(4) = '_';
 
-            skelton[HAT_DOWN][1] = '(';
-            skelton[HAT_DOWN][2] = '_';
-            skelton[HAT_DOWN][3] = '*';
-            skelton[HAT_DOWN][4] = '_';
-            skelton[HAT_DOWN][5] = ')';
+            skelton.at(HAT_DOWN).at(1) = '(';
+            skelton.at(HAT_DOWN).at(2) = '_';
+            skelton.at(HAT_DOWN).at(3) = '*';
+            skelton.at(HAT_DOWN).at(4) = '_';
+            skelton.at(HAT_DOWN).at(5) = ')';
             break;
         
         default:
@@ -115,19 +117,19 @@ namespace ariel{
     }
 
     //Left arm
-    void LeftArm(char (*skelton)[WIDTH], int num){
+    void LeftArm(vector<vector<char>> &skelton, int num){
 
         switch (num)
         {
             case 1:
-                skelton[3][ARM_LFT] = '<';
+                skelton.at(3).at(ARM_LFT) = '<';
                 break;
             case 2:
-                skelton[2][ARM_LFT] = '\\';
+                skelton.at(2).at(ARM_LFT) = '\\';
                 break;
 
             case 3:
-                skelton[3][ARM_LFT] = '/';
+                skelton.at(3).at(ARM_LFT) = '/';
                 break;
 
             case 4:
@@ -140,26 +142,21 @@ namespace ariel{
     }
     
     //Right arm
-    void RightArm(char (*skelton)[WIDTH], int num){
+    void RightArm(vector<vector<char>> &skelton, int num){
         switch (num)
         {
             case 1:
-                skelton[2][ARM_RIG] = ' ';
-                skelton[3][ARM_RIG] = '>';
+                skelton.at(3).at(ARM_RIG) = '>';
                 break;
             case 2:
-                skelton[2][ARM_RIG] = '/';
-                skelton[3][ARM_RIG] = ' ';
+                skelton.at(2).at(ARM_RIG) = '/';
                 break;
 
             case 3:
-                skelton[2][ARM_RIG] = ' ';
-                skelton[3][ARM_RIG] = '\\';
+                skelton.at(3).at(ARM_RIG) = '\\';
                 break;
 
             case 4:
-                skelton[2][ARM_RIG] = ' ';
-                skelton[3][ARM_RIG] = ' ';
                 rightArmFlag=true;
                 break;
             
@@ -169,22 +166,22 @@ namespace ariel{
     }
 
     //Left eye
-    void LeftEye(char (*skelton)[WIDTH], int num){
+    void LeftEye(vector<vector<char>> &skelton, int num){
         switch (num)
         {
             case 1:
-                skelton[2][EYE_LFT] = '.';
+                skelton.at(2).at(EYE_LFT) = '.';
                 break;
             case 2:
-                skelton[2][EYE_LFT] = 'o';
+                skelton.at(2).at(EYE_LFT) = 'o';
                 break;
 
             case 3:
-                skelton[2][EYE_LFT] = 'O';
+                skelton.at(2).at(EYE_LFT) = 'O';
                 break;
 
             case 4:
-                skelton[2][EYE_LFT] = '-';
+                skelton.at(2).at(EYE_LFT) = '-';
                 break;
             
             default:
@@ -193,22 +190,22 @@ namespace ariel{
     }
 
     //Right eye
-    void RightEye(char (*skelton)[WIDTH], int num){
+    void RightEye(vector<vector<char>> &skelton, int num){
         switch (num)
         {
             case 1:
-                skelton[2][EYE_RIG] = '.';
+                skelton.at(2).at(EYE_RIG) = '.';
                 break;
             case 2:
-                skelton[2][EYE_RIG] = 'o';
+                skelton.at(2).at(EYE_RIG) = 'o';
                 break;
 
             case 3:
-                skelton[2][EYE_RIG] = 'O';
+                skelton.at(2).at(EYE_RIG) = 'O';
                 break;
 
             case 4:
-                skelton[2][EYE_RIG] = '-';
+                skelton.at(2).at(EYE_RIG) = '-';
                 break;
             
             default:
@@ -217,22 +214,23 @@ namespace ariel{
     }
 
     //Nose
-    void Nose(char (*skelton)[WIDTH], int num){
+    void Nose(vector<vector<char>> &skelton, int num){
         switch (num)
         {
             case 1:
-                skelton[2][NOSE] = ',';
+            
+                skelton.at(2).at(NOSE)  = ',';
                 break;
             case 2:
-                skelton[2][NOSE] = '.';
+                skelton.at(2).at(NOSE) =  '.';
                 break;
 
             case 3:
-                skelton[2][NOSE] = '_';
+                skelton.at(2).at(NOSE) =  '_';
                 break;
 
             case 4:
-                skelton[2][NOSE] = ' ';
+                skelton.at(2).at(NOSE) =  ' ';
                 break;
             
             default:
@@ -241,20 +239,21 @@ namespace ariel{
     }
 
     //Torso
-    void Torso(char (*skelton)[WIDTH], int num){
+    void Torso(vector<vector<char>> &skelton, int num){
         switch (num)
         {
             case 1:
-                skelton[TOR][3] = ':';
+                skelton.at(TOR).at(3) = ':';
+                
                 break;
             case 2:
-                skelton[TOR][2] = ']';
-                skelton[TOR][4] = '[';
+                skelton.at(TOR).at(2) = ']';
+                skelton.at(TOR).at(4) = '[';
                 break;
 
             case 3:     
-                skelton[TOR][2] = '>';
-                skelton[TOR][4] = '<';
+                skelton.at(TOR).at(2) = '>';
+                skelton.at(TOR).at(4) = '<';
                 break;
 
             case 4:
@@ -266,21 +265,22 @@ namespace ariel{
     }
     
     //Base
-    void Base(char (*skelton)[WIDTH], int num){
+    void Base(vector<vector<char>> &skelton, int num){
         switch (num)
         {
             case 1:
-                skelton[BASE][3] = ':';
+                skelton.at(BASE).at(3) = ':';
+                
                 break;
             case 2:
-                skelton[BASE][2] = '"';
-                skelton[BASE][4] = '"';
+                skelton.at(BASE).at(2) = '"';
+                skelton.at(BASE).at(4) = '"';
                 break;
 
             case 3:     
-                skelton[BASE][2] = '_';
-                skelton[BASE][3] = '_';
-                skelton[BASE][4] = '_';
+                skelton.at(BASE).at(2) = '_';
+                skelton.at(BASE).at(3) = '_';
+                skelton.at(BASE).at(4) = '_';
                 break;
 
             case 4:
@@ -292,31 +292,32 @@ namespace ariel{
     }
 
     //Remove spaces by if the flags are true
-    void RemoveSpaces(char (*skelton)[WIDTH]){
+    void RemoveSpaces(vector<vector<char>> &skelton){
         if(leftArmFlag){ //Remove from left side all spaces
             for(int i=0;i<HEIGHT;i++)
-                skelton[i][0] = '\0';
+                
+                skelton.at(i).at(ARM_LFT) = '\0';
         }
 
         if(rightArmFlag){ //Remove from right side all spaces
             for(int i=0;i<HEIGHT;i++)
-                skelton[i][6] = '\0';
+                skelton.at(i).at(ARM_RIG) = '\0';
         }
 
         if(hatFlag){ //Remove from top hat
             for(int i=0;i<WIDTH;i++)
-                skelton[HAT_UP][i] = '\0';
+                skelton.at(HAT_UP).at(i) = '\0';
         }
 
     }
     
     //Building a string from 2D array
-    string BuildStringFromArray(char (*skelton)[WIDTH]){
+    string BuildStringFromArray(vector<vector<char>> &skelton){
         string str="";
         //Building the string
         for (int i=0;i<HEIGHT;i++){
             for(int j=0;j<WIDTH;j++){
-                if(skelton[i][j]!='\0'){
+                if(skelton.at(i).at(j)!='\0'){
                     str.push_back(skelton[i][j]);
                 }
             }
@@ -335,8 +336,9 @@ namespace ariel{
     //Snowman function
     string snowman(int number){
         //The skelton of snowman
-        auto skelton = new char[HEIGHT][WIDTH];
-        
+        //auto skelton = new char[HEIGHT][WIDTH];
+        std::vector<std::vector<char>> skelton;
+
         int number_of_digits = 0; //Number of digits
         int function_indexer = 0; //Index of function that will call from the array of fucntions
 
@@ -380,7 +382,6 @@ namespace ariel{
 
         string answer = BuildStringFromArray(skelton);
         //Delete the dynamic allocated of skelton function
-        //delete skelton;
 
         return answer;
     }
