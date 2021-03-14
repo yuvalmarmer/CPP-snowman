@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 #define WIDTH 7
 #define HEIGHT 5
