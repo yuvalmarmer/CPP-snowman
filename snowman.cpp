@@ -23,6 +23,7 @@ namespace ariel{
         //Set all to ' '
         for (int i=0;i<HEIGHT;i++){
             vector<char> temp;
+            temp.resize(WIDTH);
             for(int j=0;j<WIDTH;j++){
                 temp.push_back(' ');
             }
@@ -42,6 +43,8 @@ namespace ariel{
 
     //Hat
     void Hat(vector<vector<char>> &skelton, int num){
+
+        int Five = 5;
         switch (num)
         {
         case 1:
@@ -49,7 +52,7 @@ namespace ariel{
             skelton.at(HAT_DOWN).at(2) =  '=';
             skelton.at(HAT_DOWN).at(3) =  '=';
             skelton.at(HAT_DOWN).at(4) =  '=';
-            skelton.at(HAT_DOWN).at(5) =  '_';
+            skelton.at(HAT_DOWN).at(Five) =  '_';
             hatFlag = true;
 
             break;
@@ -62,7 +65,7 @@ namespace ariel{
             skelton.at(HAT_DOWN).at(2) = '.';
             skelton.at(HAT_DOWN).at(3) = '.';
             skelton.at(HAT_DOWN).at(4) = '.';
-            skelton.at(HAT_DOWN).at(5) = '.';
+            skelton.at(HAT_DOWN).at(Five) = '.';
             break;
 
         case 3:
@@ -83,7 +86,7 @@ namespace ariel{
             skelton.at(HAT_DOWN).at(2) = '_';
             skelton.at(HAT_DOWN).at(3) = '*';
             skelton.at(HAT_DOWN).at(4) = '_';
-            skelton.at(HAT_DOWN).at(5) = ')';
+            skelton.at(HAT_DOWN).at(Five) = ')';
             break;
         
         default:
@@ -290,7 +293,7 @@ namespace ariel{
     
     //Building a string from 2D array
     string BuildStringFromArray(vector<vector<char>> &skelton){
-        string str="";
+        string str;
         //Building the string
         for (int i=0;i<HEIGHT;i++){
             for(int j=0;j<WIDTH;j++){
@@ -345,7 +348,7 @@ namespace ariel{
             ++number_of_digits; 
             ++function_indexer;
 
-        } while (temp);
+        } while (temp>0);
 
         //Check if number of digits is less than 8
         if(number_of_digits<MAX_LEN){
