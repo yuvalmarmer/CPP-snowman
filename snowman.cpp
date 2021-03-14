@@ -346,8 +346,9 @@ namespace ariel{
                 throw std::out_of_range("The code is more that 8 digits");
             }
             
-            //Calll a function with the spesific index
-            functions.at(function_indexer)(skelton, num);
+            //Call a function with the spesific index
+            auto fun = functions.at(function_indexer);
+            fun(skelton, num);
             
             temp /= BASE_M;
 
