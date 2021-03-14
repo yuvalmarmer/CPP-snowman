@@ -354,7 +354,7 @@ namespace ariel{
             }
 
             //Check if there is more than 8 digits
-            if(number_of_digits>MAX_LEN){
+            if(number_of_digits>=MAX_LEN){
                 throw std::out_of_range("The code is more that 8 digits");
             }
             
