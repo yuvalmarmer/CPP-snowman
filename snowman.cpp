@@ -332,7 +332,7 @@ namespace ariel{
 
     
     //Array of all funcitons
-    void (*functions[])(char(*)[WIDTH], int) = {Base, Torso, RightArm, LeftArm, RightEye, LeftEye, Nose, Hat};
+    void (*functions[])(vector<vector<char>>&, int) = {Base, Torso, RightArm, LeftArm, RightEye, LeftEye, Nose, Hat};
     //Snowman function
     string snowman(int number){
         //The skelton of snowman
