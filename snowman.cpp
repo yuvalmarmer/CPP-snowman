@@ -8,33 +8,6 @@
 using namespace std;
 
 
-#define WIDTH 7
-#define HEIGHT 5
-
-const int HAT_UP = 0;
-const int HAT_DOWN = 1;
-
-const int ARM_LFT = 0;
-const int ARM_RIG = 6;
-
-const int EYE_LFT = 2;
-const int EYE_RIG = 4;
-
-const int NOSE = 3;
-
-const int TOR = 3;
-
-const int BASE= 4;
-
-const int BASE_M = 10;
-
-const int MAX_LEN = 8;
-
-const int RANGE_LOW = 1;
-const int RANGE_HIGH = 4;
-
-
-
 namespace ariel{
     
     bool leftArmFlag = false; //Flag for deleting spaces on left side
@@ -56,14 +29,14 @@ namespace ariel{
             skelton.push_back(temp);
         }
         //Adding left boundes
-        skelton.at(2).at(1) ='(';
-        skelton.at(3).at(1) ='(';
-        skelton.at(4).at(1) ='(';
+        skelton.at(2).at(LEFT_SIDE) ='(';
+        skelton.at(3).at(LEFT_SIDE) ='(';
+        skelton.at(4).at(LEFT_SIDE) ='(';
 
         //Adding right boundes
-        skelton.at(2).at(5)=')';
-        skelton.at(3).at(5)=')';
-        skelton.at(4).at(5)=')';
+        skelton.at(2).at(RIGH_SIDE)=')';
+        skelton.at(3).at(RIGH_SIDE)=')';
+        skelton.at(4).at(RIGH_SIDE)=')';
 
     }
 
@@ -296,19 +269,21 @@ namespace ariel{
     //Remove spaces by if the flags are true
     void RemoveSpaces(vector<vector<char>> &skelton){
         if(leftArmFlag){ //Remove from left side all spaces
-            for(int i=0;i<HEIGHT;i++)
-                
+            for(int i=0;i<HEIGHT;i++){
                 skelton.at(i).at(ARM_LFT) = '\0';
+            }
         }
 
         if(rightArmFlag){ //Remove from right side all spaces
-            for(int i=0;i<HEIGHT;i++)
+            for(int i=0;i<HEIGHT;i++){
                 skelton.at(i).at(ARM_RIG) = '\0';
+            }
         }
 
         if(hatFlag){ //Remove from top hat
-            for(int i=0;i<WIDTH;i++)
+            for(int i=0;i<WIDTH;i++){
                 skelton.at(HAT_UP).at(i) = '\0';
+            }
         }
 
     }

@@ -1,8 +1,35 @@
 #include <iostream>
 #include <vector>
 
-#define WIDTH 7
-#define HEIGHT 5
+
+//DEFENITIONS
+const int WIDTH = 7;
+const int HEIGHT = 5;
+
+const int HAT_UP = 0;
+const int HAT_DOWN = 1;
+
+const int ARM_LFT = 0;
+const int ARM_RIG = 6;
+
+const int EYE_LFT = 2;
+const int EYE_RIG = 4;
+
+const int NOSE = 3;
+
+const int TOR = 3;
+
+const int BASE= 4;
+
+const int BASE_M = 10;
+
+const int MAX_LEN = 8;
+
+const int RANGE_LOW = 1;
+const int RANGE_HIGH = 4;
+
+const int LEFT_SIDE = 1;
+const int RIGH_SIDE = 5;
 
 using namespace std;
 namespace ariel
