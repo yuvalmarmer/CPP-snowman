@@ -9,6 +9,30 @@ using namespace std;
 #define WIDTH 7
 #define HEIGHT 5
 
+const int HAT_UP = 0;
+const int HAT_DOWN = 1;
+
+const int ARM_LFT = 0;
+const int ARM_RIG = 6;
+
+const int EYE_LFT = 2;
+const int EYE_RIG = 4;
+
+const int NOSE = 3;
+
+const int TOR = 3;
+
+const int BASE= 4;
+
+const int BASE_M = 10;
+
+const int MAX_LEN = 8;
+
+const int RANGE_LOW = 1;
+const int RANGE_HIGH = 4;
+
+
+
 namespace ariel{
     
     bool leftArmFlag = false; //Flag for deleting spaces on left side
@@ -44,48 +68,45 @@ namespace ariel{
         switch (num)
         {
         case 1:
-            skelton[1][1] = '_';
-            skelton[1][2] = '=';
-            skelton[1][3] = '=';
-            skelton[1][4] = '=';
-            skelton[1][5] = '_';
+            skelton[HAT_DOWN][1] = '_';
+            skelton[HAT_DOWN][2] = '=';
+            skelton[HAT_DOWN][3] = '=';
+            skelton[HAT_DOWN][4] = '=';
+            skelton[HAT_DOWN][5] = '_';
             hatFlag = true;
 
             break;
         case 2:
-            skelton[0][2] = '_';
-            skelton[0][3] = '_';
-            skelton[0][4] = '_';
+            skelton[HAT_UP][2] = '_';
+            skelton[HAT_UP][3] = '_';
+            skelton[HAT_UP][4] = '_';
 
-            skelton[1][1] = '.';
-            skelton[1][2] = '.';
-            skelton[1][3] = '.';
-            skelton[1][4] = '.';
-            skelton[1][5] = '.';
+            skelton[HAT_DOWN][1] = '.';
+            skelton[HAT_DOWN][2] = '.';
+            skelton[HAT_DOWN][3] = '.';
+            skelton[HAT_DOWN][4] = '.';
+            skelton[HAT_DOWN][5] = '.';
             break;
 
         case 3:
 
-            skelton[0][3] = '_';
+            skelton[HAT_UP][3] = '_';
 
-            skelton[1][2] = '/';
-            skelton[1][3] = '_';
-            skelton[1][4] = '\\';
+            skelton[HAT_DOWN][2] = '/';
+            skelton[HAT_DOWN][3] = '_';
+            skelton[HAT_DOWN][4] = '\\';
             break;
 
         case 4:
-            strcpy(skelton[0], string("  ___  ").c_str());
-            strcpy(skelton[1], string(" (_*_) ").c_str());
+            skelton[HAT_UP][2] = '_';
+            skelton[HAT_UP][3] = '_';
+            skelton[HAT_UP][4] = '_';
 
-            skelton[0][2] = '_';
-            skelton[0][3] = '_';
-            skelton[0][4] = '_';
-
-            skelton[1][1] = '(';
-            skelton[1][2] = '_';
-            skelton[1][3] = '*';
-            skelton[1][4] = '_';
-            skelton[1][5] = ')';
+            skelton[HAT_DOWN][1] = '(';
+            skelton[HAT_DOWN][2] = '_';
+            skelton[HAT_DOWN][3] = '*';
+            skelton[HAT_DOWN][4] = '_';
+            skelton[HAT_DOWN][5] = ')';
             break;
         
         default:
@@ -99,14 +120,14 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                skelton[3][0] = '<';
+                skelton[3][ARM_LFT] = '<';
                 break;
             case 2:
-                skelton[2][0] = '\\';
+                skelton[2][ARM_LFT] = '\\';
                 break;
 
             case 3:
-                skelton[3][0] = '/';
+                skelton[3][ARM_LFT] = '/';
                 break;
 
             case 4:
@@ -123,22 +144,22 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                skelton[2][6] = ' ';
-                skelton[3][6] = '>';
+                skelton[2][ARM_RIG] = ' ';
+                skelton[3][ARM_RIG] = '>';
                 break;
             case 2:
-                skelton[2][6] = '/';
-                skelton[3][6] = ' ';
+                skelton[2][ARM_RIG] = '/';
+                skelton[3][ARM_RIG] = ' ';
                 break;
 
             case 3:
-                skelton[2][6] = ' ';
-                skelton[3][6] = '\\';
+                skelton[2][ARM_RIG] = ' ';
+                skelton[3][ARM_RIG] = '\\';
                 break;
 
             case 4:
-                skelton[2][6] = ' ';
-                skelton[3][6] = ' ';
+                skelton[2][ARM_RIG] = ' ';
+                skelton[3][ARM_RIG] = ' ';
                 rightArmFlag=true;
                 break;
             
@@ -152,18 +173,18 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                skelton[2][2] = '.';
+                skelton[2][EYE_LFT] = '.';
                 break;
             case 2:
-                skelton[2][2] = 'o';
+                skelton[2][EYE_LFT] = 'o';
                 break;
 
             case 3:
-                skelton[2][2] = 'O';
+                skelton[2][EYE_LFT] = 'O';
                 break;
 
             case 4:
-                skelton[2][2] = '-';
+                skelton[2][EYE_LFT] = '-';
                 break;
             
             default:
@@ -176,18 +197,18 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                skelton[2][4] = '.';
+                skelton[2][EYE_RIG] = '.';
                 break;
             case 2:
-                skelton[2][4] = 'o';
+                skelton[2][EYE_RIG] = 'o';
                 break;
 
             case 3:
-                skelton[2][4] = 'O';
+                skelton[2][EYE_RIG] = 'O';
                 break;
 
             case 4:
-                skelton[2][4] = '-';
+                skelton[2][EYE_RIG] = '-';
                 break;
             
             default:
@@ -200,18 +221,18 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                skelton[2][3] = ',';
+                skelton[2][NOSE] = ',';
                 break;
             case 2:
-                skelton[2][3] = '.';
+                skelton[2][NOSE] = '.';
                 break;
 
             case 3:
-                skelton[2][3] = '_';
+                skelton[2][NOSE] = '_';
                 break;
 
             case 4:
-                skelton[2][3] = ' ';
+                skelton[2][NOSE] = ' ';
                 break;
             
             default:
@@ -224,16 +245,16 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                skelton[3][3] = ':';
+                skelton[TOR][3] = ':';
                 break;
             case 2:
-                skelton[3][2] = ']';
-                skelton[3][4] = '[';
+                skelton[TOR][2] = ']';
+                skelton[TOR][4] = '[';
                 break;
 
             case 3:     
-                skelton[3][2] = '>';
-                skelton[3][4] = '<';
+                skelton[TOR][2] = '>';
+                skelton[TOR][4] = '<';
                 break;
 
             case 4:
@@ -249,17 +270,17 @@ namespace ariel{
         switch (num)
         {
             case 1:
-                skelton[4][3] = ':';
+                skelton[BASE][3] = ':';
                 break;
             case 2:
-                skelton[4][2] = '"';
-                skelton[4][4] = '"';
+                skelton[BASE][2] = '"';
+                skelton[BASE][4] = '"';
                 break;
 
             case 3:     
-                skelton[4][2] = '_';
-                skelton[4][3] = '_';
-                skelton[4][4] = '_';
+                skelton[BASE][2] = '_';
+                skelton[BASE][3] = '_';
+                skelton[BASE][4] = '_';
                 break;
 
             case 4:
@@ -284,7 +305,7 @@ namespace ariel{
 
         if(hatFlag){ //Remove from top hat
             for(int i=0;i<WIDTH;i++)
-                skelton[0][i] = '\0';
+                skelton[HAT_UP][i] = '\0';
         }
 
     }
@@ -299,7 +320,9 @@ namespace ariel{
                     str.push_back(skelton[i][j]);
                 }
             }
-            str.push_back('\n');
+            if(i!=0 && !hatFlag){
+                str.push_back('\n');
+            }
         }
 
         return str;
@@ -324,19 +347,21 @@ namespace ariel{
         initSnowman(skelton); //Init from snowman 
 
         do {     
-            num = temp%10;
+            num = temp%BASE_M;
             //Checks if the code is valid, else throw exception
-            if(num<1 || num > 4)
+            if(num<RANGE_LOW || num > RANGE_HIGH){
                 throw std::invalid_argument("Invalide code");
+            }
 
             //Check if there is more than 8 digits
-            if(number_of_digits>8)
+            if(number_of_digits>MAX_LEN){
                 throw std::out_of_range("The code is more that 8 digits");
+            }
             
             //Calll a function with the spesific index
             functions[function_indexer](skelton, num);
             
-            temp /= 10;
+            temp /= BASE_M;
 
             ++number_of_digits; 
             ++function_indexer;
@@ -344,9 +369,9 @@ namespace ariel{
         } while (temp);
 
         //Check if number of digits is less than 8
-        if(number_of_digits<8)
+        if(number_of_digits<MAX_LEN){
             throw std::exception();
-
+        }
 
         //Remove all spaces 
         RemoveSpaces(skelton);
