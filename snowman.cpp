@@ -320,7 +320,7 @@ namespace ariel{
                     str.push_back(skelton[i][j]);
                 }
             }
-            if(i!=0 && !hatFlag){
+            if(!(i==0 && hatFlag)){
                 str.push_back('\n');
             }
         }
