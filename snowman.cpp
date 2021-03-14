@@ -314,7 +314,10 @@ namespace ariel{
     
     //Array of all funcitons
     //void (*functions[])(vector<vector<char>>&, int) = {Base, Torso, RightArm, LeftArm, RightEye, LeftEye, Nose, Hat};
-    std::array<std::function<void(vector<vector<char>>&, int)>, 8> functions = {{bind(&Base, _1),bind(&Torso, _1),bind(&RightArm, _1),bind(&LeftArm, _1),bind(&RightEye, _1),bind(&LeftEye, _1),bind(&Nose, _1),bind(&Hat, _1)}};
+    std::array<std::function<void(vector<vector<char>>&, int)>, 8> functions = {{bind(&Base, placeholders::_1, placeholders::_2),bind(&Torso, placeholders::_1, placeholders::_2), 
+                                                                                bind(&RightArm, placeholders::_1, placeholders::_2),bind(&LeftArm, placeholders::_1, placeholders::_2), 
+                                                                                bind(&RightEye, placeholders::_1, placeholders::_2),bind(&LeftEye, placeholders::_1, placeholders::_2), 
+                                                                                bind(&Nose, placeholders::_1, placeholders::_2),bind(&Hat, placeholders::_1, placeholders::_2)}};
     //Snowman function
     string snowman(int number){
 
